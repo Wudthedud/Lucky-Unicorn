@@ -4,13 +4,17 @@ Token Generator
 By Daniel Wu
 """
 import random
-
+import time
 
 # Add constants
 ZEBRA_TOKEN = 0.5
 HORSE_TOKEN = 0.5
 UNICORN_TOKEN = 5
 DONKEY_TOKEN = 0
+U = "Unicorn Token"
+Z = "Zebra Token"
+H = "Horse Token"
+D = "Donkey Token"
 
 
 # Instructions
@@ -33,9 +37,17 @@ def is_number(num, min, max):
 
 # Token Generator
 def generate():
-    tokens = [["U", 5], ["Z", 0.5], ["H", 0.5], ["D", 0]]
-    number = random.randint(1, 4)
-    return tokens[number]
+    tokens = [[U, 5], [Z, 0.5], [H, 0.5], [D, 0]]
+    number = random.randint(0, 3)
+    token = tokens[number]
+    print("Generating Token")
+    for i in range(3):
+        print(".")
+        time.sleep(0.3)
+    print(f"You got a {token[0]} \n"
+          f"${token[1]:.2f} has been added to your balance")
+    return
+
 
 
 # Yes/No Checker
@@ -62,6 +74,6 @@ else:
     instructions()
     question = "Do you want to continue? \n"
     if yes_no(question):
-        print("Continue")
+        generate()
     else:
         print("Exit")
