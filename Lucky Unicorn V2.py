@@ -11,11 +11,13 @@ HORSE_TOKEN = 0.5
 UNICORN_TOKEN = 5
 DONKEY_TOKEN = 0
 
+
 # Token Generator
 def generate():
     tokens = [["U", 5], ["Z", 0.5], ["H", 0.5], ["D", 0]]
     number = random.randint(1, 4)
-    return tokens[number]
+    print(tokens[number])
+
 
 # Yes/No Checker
 def yes_no(question_):
@@ -28,7 +30,8 @@ def yes_no(question_):
         else:
             print("Please enter (Yes/No)")
 
-#def payment(amount):
+
+# def payment(amount):
 #    amount *
 
 
