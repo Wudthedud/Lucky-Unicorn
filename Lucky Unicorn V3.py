@@ -1,6 +1,6 @@
 """
 Lucky Unicorn Version 3
-Number Checker
+Token Generate and Instructions
 By Daniel Wu
 """
 import random
@@ -11,22 +11,11 @@ HORSE_TOKEN = 0.5
 UNICORN_TOKEN = 5
 DONKEY_TOKEN = 0
 
-# Instructions
-
-
-# Number Checker
-def is_number(num, min, max):
-    while min > num > max:
-        num = input(int(f"Please enter a number between {min} and {max} \n"))
-    return num
-
-
 # Token Generator
 def generate():
     tokens = [["U", 5], ["Z", 0.5], ["H", 0.5], ["D", 0]]
     number = random.randint(1, 4)
-    print(tokens[number])
-
+    return tokens[number]
 
 # Yes/No Checker
 def yes_no(question_):
@@ -40,14 +29,14 @@ def yes_no(question_):
             print("Please enter (Yes/No)")
 
 
-# def payment(amount):
-#    amount *
-
 
 # Ask user if they have played before: if yes, program continues, if no, show instruction screen
 question = "Have you played before? \n"
 if yes_no(question):
-    generate()
+    token = generate()
+    payout = token[1]
+    print(payout)
+
 else:
     print("============ Welcome to Lucky Unicorn ============= \n"
           "\t Payout Rewards: \n"

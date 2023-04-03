@@ -1,5 +1,5 @@
 """
-Lucky Unicorn Version 3
+Lucky Unicorn Version 4
 Number Checker
 By Daniel Wu
 """
@@ -11,7 +11,16 @@ HORSE_TOKEN = 0.5
 UNICORN_TOKEN = 5
 DONKEY_TOKEN = 0
 
+
 # Instructions
+def instructions():
+    print("============ Welcome to Lucky Unicorn ============= \n"
+          "\t Payout Rewards: \n"
+          "\t Unicorn: 3x Payment \n"
+          "\t Zebra: 1/2 of Payment \n"
+          "\t Horse: 1/2 of Payment \n"
+          "\t Donkey: Nothing \n"
+          "===================================================")
 
 
 # Number Checker
@@ -25,7 +34,7 @@ def is_number(num, min, max):
 def generate():
     tokens = [["U", 5], ["Z", 0.5], ["H", 0.5], ["D", 0]]
     number = random.randint(1, 4)
-    print(tokens[number])
+    return tokens[number]
 
 
 # Yes/No Checker
@@ -47,15 +56,10 @@ def yes_no(question_):
 # Ask user if they have played before: if yes, program continues, if no, show instruction screen
 question = "Have you played before? \n"
 if yes_no(question):
-    generate()
+#    generate()
+    print("Continue")
 else:
-    print("============ Welcome to Lucky Unicorn ============= \n"
-          "\t Payout Rewards: \n"
-          "\t Unicorn: 3x Payment \n"
-          "\t Zebra: 1/2 of Payment \n"
-          "\t Horse: 1/2 of Payment \n"
-          "\t Donkey: Nothing \n"
-          "===================================================")
+    instructions()
     question = "Do you want to continue? \n"
     if yes_no(question):
         print("Continue")
