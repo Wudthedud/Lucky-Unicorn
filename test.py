@@ -1,15 +1,12 @@
-def initial_payment(amount):
-    amount_ = amount
-    num = isinstance(amount_, int)
-    print(num)
-    if 1 <= amount_ <= 10 and num is True:
-        return amount_
-    else:
-        amount_ = float(input("Please enter a number between 1 and 10\n"))
-        while 1 > amount_ > 10 and num is False:
-            amount_ = float(input("Please enter a number between 1 and 10\n"))
-            num = isinstance(amount_, int)
-        return amount_
+def payment():
+    while True:
+        try:
+            amount = float(input("Please enter a number between 1 and 10\n"))
+            if 1 <= amount <= 10 and amount.is_integer():
+                print(f"You are playing with ${amount:.2f}")
+                return amount
+            else:
+                print("Please enter an integer between 1 and 10\n")
+        except ValueError:
+            print("Please enter a number between 1 and 10\n")
 
-
-print(f"You are playing with ${initial_payment(6.5)}")

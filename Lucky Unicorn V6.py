@@ -1,6 +1,6 @@
 """
 Lucky Unicorn Version 5
-Initial Payment
+Token Generation
 By Daniel Wu
 """
 import random
@@ -61,18 +61,17 @@ def yes_no(question_):
             print("Please enter (Yes/No)")
 
 
+# Amount the user bets
 def payment():
     valid_num = False
     while not valid_num:
         try:
-            amount = int(input(question))
+            amount = int(input("How much money do you want to play with? \n"))
             num = isinstance(amount, int)
-
             if 1 <= amount <= 10 and num is True:
                 print(f"You are playing with ${amount:.2f}")
                 valid_num = True
                 return amount
-
             else:
                 amount = float(input("Please enter a number between 1 and 10\n"))
                 num = isinstance(amount, int)
@@ -85,13 +84,16 @@ def payment():
 
 
 # Ask user if they have played before: if yes, program continues, if no, show instruction screen
+# MAIN PROGRAM
 question = "Have you played before? \n"
 if yes_no(question):
-    generate()
+    payment()
+    print("Generate Token")
 else:
     instructions()
     question = "Do you want to continue? \n"
     if yes_no(question):
-        generate()
+        payment()
+        print("Generate Token")
     else:
         print("Exit")
