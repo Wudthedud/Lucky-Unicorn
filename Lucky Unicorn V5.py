@@ -62,8 +62,18 @@ def yes_no(question_):
             print("Please enter (Yes/No)")
 
 
-# def payment(amount):
-#    amount *
+def intial_payment(amount):
+    valid = False
+    while not valid:
+        try:
+            payment = int(input("Please enter a number between 1 and 10"))
+            if 1 <= amount <= 10:
+                print(f"You are playing with ${payment}")
+                valid = True
+                return payment
+            else:
+                print("Error")
+
 
 
 # Ask user if they have played before: if yes, program continues, if no, show instruction screen
